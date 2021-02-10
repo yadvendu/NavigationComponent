@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/custom_nav_graph"
+    app:startDestination="@id/sendCustomObjectArgumentFragment">
+
+    <fragment
+        android:id="@+id/sendCustomObjectArgumentFragment"
+        android:name="com.example.navigationmoduleone.SendCustomObjectArgumentFragment"
+        android:label="fragment_send_custom_object_argument"
+        tools:layout="@layout/fragment_send_custom_object_argument" >
+        <action
+            android:id="@+id/action_sendCustomObjectArgumentFragment_to_receiveCustomObjectFragment"
+            app:destination="@id/receiveCustomObjectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/receiveCustomObjectFragment"
+        android:name="com.example.navigationmoduleone.ReceiveCustomObjectFragment"
+        android:label="fragment_receive_custom_object"
+        tools:layout="@layout/fragment_receive_custom_object" >
+        <argument
+            android:name="user"
+            app:argType="com.example.navigationmoduleone.model.User" />
+        <argument
+            android:name="userList"
+            app:argType="com.example.navigationmoduleone.model.User[]" />
+    </fragment>
+</navigation>
